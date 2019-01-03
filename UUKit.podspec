@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UUKit"
-  spec.version      = "0.2.0"
+  spec.version      = "0.0.2"
   spec.summary      = "iOS开发基础组件"
 
   # This description is used to generate tags and improve search results.
