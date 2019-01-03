@@ -46,12 +46,13 @@ extension UIViewController: CNContactPickerDelegate {
     }
     
     //delegate
-    private func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
+    public func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         let number = contactProperty.value as? CNPhoneNumber
         let name = contactProperty.contact.familyName + contactProperty.contact.givenName
         let phone = number?.stringValue
         guard let c = contact else { return print("未获取到联系人信息") }
         c(name,phone)
+        dismiss(animated: true, completion: nil)
     }
     
 }
