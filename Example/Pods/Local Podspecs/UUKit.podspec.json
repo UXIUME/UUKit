@@ -1,0 +1,22 @@
+{
+  "name": "UUKit",
+  "version": "0.1.0",
+  "summary": "A short description of UUKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mail@uxiu.me/UUKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mail@uxiu.me": "uukit@uxiu.me"
+  },
+  "source": {
+    "git": "https://github.com/mail@uxiu.me/UUKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UUKit/Classes/**/*"
+}
