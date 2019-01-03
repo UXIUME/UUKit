@@ -1,22 +1,23 @@
 {
   "name": "UUKit",
-  "version": "0.1.0",
-  "summary": "A short description of UUKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/mail@uxiu.me/UUKit",
+  "version": "0.0.1",
+  "summary": "iOS开发底层组件(工具组件)",
+  "description": "iOS开发底层组件(工具组件).",
+  "homepage": "https://github.com/UUKit/UUKit",
   "license": {
     "type": "MIT",
-    "file": "LICENSE"
+    "file": "FILE_LICENSE"
   },
   "authors": {
-    "mail@uxiu.me": "uukit@uxiu.me"
-  },
-  "source": {
-    "git": "https://github.com/mail@uxiu.me/UUKit.git",
-    "tag": "0.1.0"
+    "UUKit": "mail@uxiu.me"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "UUKit/Classes/**/*"
+  "source": {
+    "git": "https://github.com/UUKit/UUKit.git",
+    "commit": "43b160290428cd092526fdff22587e7cd10028ff"
+  },
+  "source_files": "UUKit/Classes/**/*",
+  "swift_version": "4.2"
 }
