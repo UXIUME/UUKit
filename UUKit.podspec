@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UUKit"
-  spec.version      = "0.0.1"
-  spec.summary      = "iOS开发底层组件(工具组件)"
+  spec.version      = "0.2.0"
+  spec.summary      = "iOS开发基础组件"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  iOS开发底层组件(工具组件).
+  iOS开发基础组件，包括一些有用的扩展，等工具.
                    DESC
 
   spec.homepage     = "https://github.com/UUKit/UUKit"
@@ -80,8 +80,8 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/UUKit/UUKit.git", :commit => "43b160290428cd092526fdff22587e7cd10028ff" }
-
+  # spec.source       = { :git => "https://github.com/UUKit/UUKit.git", :commit => "43b160290428cd092526fdff22587e7cd10028ff" }
+  spec.source           = { :git => 'https://github.com/UUKit/UUKit.git', :tag => spec.version.to_s }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

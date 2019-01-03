@@ -46,7 +46,7 @@
 		6C5B041A2672FEDF3AE82168 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7DB8E0A81EB7FB96DF13199C /* Pods-UUKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-UUKit_Tests/Pods-UUKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4E9F444A8489DFBC4D90D40 /* Pods-UUKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-UUKit_Tests/Pods-UUKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DEB99ECF975579C7D11E73C6 /* UUKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UUKit.podspec; path = ../UUKit.podspec; sourceTree = "<group>"; };
+		DEB99ECF975579C7D11E73C6 /* UUKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UUKit.podspec; path = ../UUKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +212,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Z2W3D7G5P4;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -485,7 +486,9 @@
 			baseConfigurationReference = 17A6EEC16FB6548F75119BB1 /* Pods-UUKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z2W3D7G5P4;
 				INFOPLIST_FILE = UUKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -500,7 +503,9 @@
 			baseConfigurationReference = 30CF8AD23BEB1495E4434169 /* Pods-UUKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z2W3D7G5P4;
 				INFOPLIST_FILE = UUKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
