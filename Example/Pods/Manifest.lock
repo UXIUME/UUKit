@@ -1,0 +1,16 @@
+PODS:
+  - UUKit (0.1.0)
+
+DEPENDENCIES:
+  - UUKit (from `../`)
+
+EXTERNAL SOURCES:
+  UUKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UUKit: e1f18e975277ed5e7219e876837909ece9ba262c
+
+PODFILE CHECKSUM: 0fc3c635b55741368f14b8485b8bbfff95e1151e
+
+COCOAPODS: 1.6.0.beta.2
