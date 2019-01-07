@@ -7,6 +7,14 @@
 
 import Foundation
 
+//extension Optional {
+//    
+//    var `default`<T where T :Self>: T {
+//        
+//    }
+//    
+//}
+
 extension Optional where Wrapped: Collection {
     
     public var isNilOrEmpty: Bool {
