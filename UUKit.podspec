@@ -94,24 +94,8 @@ Pod::Spec.new do |spec|
   # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
-  # spec.source_files = 'UUKit/Classes/**/*'
+  spec.source_files = 'UUKit/Classes/**/*'
   spec.swift_version = '4.2'
-  
-  spec.subspec 'UUOpen' do |ss|
-      ss.source_files = 'UUKit/Classes/UUOpen/**/*'
-  end
-  
-  spec.subspec 'UUProtocols' do |ss|
-      ss.source_files = 'UUKit/Classes/UUProtocols/**/*'
-  end
-  
-  spec.subspec 'UUExtensions' do |ss|
-      ss.source_files = 'UUKit/Classes/UUExtensions/**/*'
-  end
-  
-  spec.subspec 'UUComponents' do |ss|
-      ss.source_files = 'UUKit/Classes/UUComponents/**/*'
-  end
 
   # spec.public_header_files = "Classes/**/*.h"
 
