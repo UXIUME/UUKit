@@ -1,9 +1,9 @@
 //
 //  DLOG.swift
-//  Dynasty.dajiujiao
+//  UUKit
 //
 //  Created by uxiu.me on 2018/4/18.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me All rights reserved.
 //
 
 import Foundation
