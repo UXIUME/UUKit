@@ -12,7 +12,7 @@ public protocol UserDefaultsProtocol {
     associatedtype EnumKeys: RawRepresentable
 }
 
-public extension UserDefaultsProtocol where EnumKeys.RawValue == String {
+extension UserDefaultsProtocol where EnumKeys.RawValue == String {
     
     
     //MARK: - object

@@ -15,18 +15,7 @@ public let UITemplateSize = CGSize(width: 375, height: 667)//****
 ///**************************************************************
 ///**************************************************************
 
-
-/// 生成闭区间里的浮点数值
-///
-/// - Parameters:
-///   - min: 最小值
-///   - max: 最大值
-/// - Returns: 最小值到最大值之间的随机数 CGFloat 型
-public func randomIn(min: CGFloat, max: CGFloat) -> CGFloat {
-    return min + (max - min) * CGFloat(Float(arc4random()) / 0xFFFFFFFF)
-}
-
-public extension CGFloat {
+extension CGFloat {
     
     /// 返回一个浮点数的一半
     public var half: CGFloat { return (self / 2.0) }
@@ -41,21 +30,9 @@ public extension CGFloat {
     
     ///返回包括0和1.0之间的随机浮点数
     static var random0_1: CGFloat {
-        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        return CGFloat(CGFloat(arc4random()) / 0xFFFFFFFF)
     }
     
-}
-
-
-
-/// 生成闭区间里的数值
-///
-/// - Parameters:
-///   - min: 最小值
-///   - max: 最大值
-/// - Returns: 最小值到最大值之间的随机数 Float 型
-public func randomIn(min: Float, max: Float) -> Float {
-    return min + (max - min) * (Float(arc4random()) / 0xFFFFFFFF)
 }
 
 extension Float {
@@ -73,7 +50,7 @@ extension Float {
     
     ///返回包括0和1.0之间的随机浮点数
     public static var random0_1: Float {
-        return Float(arc4random()) / 0xFFFFFFFF
+        return Float(CGFloat(arc4random()) / 0xFFFFFFFF)
     }
     
 }

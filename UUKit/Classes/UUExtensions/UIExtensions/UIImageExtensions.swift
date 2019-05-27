@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public extension UIImage {
+@objc extension UIImage {
     
     
     /// <#Description#>

@@ -40,7 +40,7 @@ import UIKit
         btn.frame = CGRect(x: btnX, y: btnY, width: btnW, height: btnH)
         btn.setTitle("立即体验", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.setRoundedCorner(4)
+        btn.layer.cornerRadius = 4
         btn.backgroundColor = UIColor(red:0.58, green:0.04, blue:0.14, alpha:1.00)
         btn.addTarget(self, action: #selector(startApp), for: .touchUpInside)
         return btn

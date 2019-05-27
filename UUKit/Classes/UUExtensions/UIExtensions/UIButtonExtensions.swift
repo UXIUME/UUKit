@@ -14,7 +14,7 @@ protocol UUButtonProtocol {
     
 }
 
-public extension UIButton {
+extension UIButton {
     
     public convenience init( frame: CGRect = CGRect.zero, titleNormal: String? = "", titleSelected: String? = "", titleColorNormal: UIColor? = .black, titleColorSelected: UIColor? = .black, font: UIFont? = .systemFont(ofSize: 16), titleLines: Int = 1, titleAligement: NSTextAlignment = .center, target: Any?, action: Selector, for controlEvents: UIControl.Event = .touchUpInside) {
         self.init(frame: frame)

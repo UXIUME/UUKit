@@ -13,7 +13,7 @@ public func UIFontMake(_ size: CGFloat, _ weight: UIFont.Weight = .regular) -> U
     return UIFont.systemFont(ofSize: size, weight: weight)
 }
 
-public extension UIFont {
+extension UIFont {
     
     
     /// 屏幕宽度等比适配字体大小

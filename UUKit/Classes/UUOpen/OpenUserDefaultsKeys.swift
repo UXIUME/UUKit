@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension UserDefaults {
+extension UserDefaults {
     
     public struct AppStart: UserDefaultsProtocol {
         public enum EnumKeys: String {

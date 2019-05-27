@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public extension UINib {
+@objc extension UINib {
     
     
     /// 判断xib文件是否存在

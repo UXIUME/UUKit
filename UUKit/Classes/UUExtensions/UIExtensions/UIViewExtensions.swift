@@ -22,7 +22,7 @@ extension UIView {
     
 }
 
-@objc extension UIView {
+extension UIView {
     
     //MARK: - ———————————— Gradient Color ————————————
     /// 设置渐变背景色
@@ -32,7 +32,7 @@ extension UIView {
     ///   - locations: 渐变色分段数组，数值为 0~1 之间的float值
     ///   - startPoint: 渐变色的起始位置
     ///   - endPoint: 渐变色的结束位置
-    public func setGradientBG(colors: [UIColor] = [UIColorMake(0xCC0422), UIColorMake(0x7D0014)], locations: [NSNumber]? = nil, startPoint: CGPoint = CGPoint(x: 0.1, y: 0), endPoint: CGPoint = CGPoint(x: 0.9, y: 0)) {
+    public func setGradientLayer(colors: [UIColor] = [UIColor(hexInt: 0xCC0422), UIColor(hexInt: 0x7D0014)], locations: [NSNumber]? = nil, startPoint: CGPoint = CGPoint(x: 0.1, y: 0), endPoint: CGPoint = CGPoint(x: 0.9, y: 0)) {
         var cgColors = [CGColor]()
         for color: UIColor in colors {
             cgColors.append(color.cgColor)
@@ -47,17 +47,51 @@ extension UIView {
     }
     
     //MARK: - ———————————— RoundedCorner ————————————
-    /// 设置圆角
+    /// 裁剪圆角
     ///
     /// - Parameters:
     ///   - radius: 圆角半径
-    ///   - borderWidth: 圆边宽度,默认为零
-    ///   - borderColor: 圆边颜色，默认无色
-    public func setRoundedCorner(_ radius: CGFloat, _ borderWidth: CGFloat = 0, _ borderColor: UIColor? = UIColor.clear) -> Void {
-        layer.cornerRadius  = radius
-        layer.borderWidth   = borderWidth
-        layer.borderColor   = borderColor?.cgColor
-        layer.masksToBounds = true
+    ///   - direction: 圆角位置，左上，右上，左下，右下，可组合搭配
+    /// - Returns: 裁切完成的View
+    @discardableResult public func setRoundCorner(radius: CGFloat? = nil, direction: UIRectCorner? = nil) -> Self {
+        let _radius = radius ?? (bounds.height / 2.0)
+        guard let _direction = direction else {
+            layer.cornerRadius  = _radius
+            layer.masksToBounds = true//ios9以后不会造成离屏渲染
+            return self
+        }
+        let radii = CGSize(width: _radius, height: _radius)
+        let maskPath = UIBezierPath(roundedRect: bounds,
+                                    byRoundingCorners: _direction,
+                                    cornerRadii: radii)
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+        guard let _borderColor = layer.borderColor, layer.borderWidth > 0 else { return self }
+        return setBorder(layer.borderWidth, UIColor(cgColor: _borderColor))
+    }
+    
+    //MARK: - ———————————— ViewBorder ————————————
+    /// 设置边框
+    ///
+    /// - Parameters:
+    ///   - width: 边框宽度
+    ///   - color: 边框颜色
+    /// - Returns: 边框设置完成的view
+    @discardableResult public func setBorder(_ width: CGFloat, _ color: UIColor) -> Self {
+        guard let shapeLayer = layer.mask as? CAShapeLayer, let path = shapeLayer.path else {
+            layer.borderWidth = width
+            layer.borderColor = color.cgColor
+            return self
+        }
+        let borderLayer = CAShapeLayer()
+        borderLayer.path = path
+        borderLayer.fillColor = UIColor.clear.cgColor
+        borderLayer.strokeColor = color.cgColor
+        //path是从边框的中心位置计算的,maskLayer外围还有一半未显示
+        borderLayer.lineWidth = width * 2
+        layer.addSublayer(borderLayer)
+        return self
     }
     
     //MARK: - ———————————— ViewShadow ————————————
@@ -112,4 +146,3 @@ extension UIView {
     }
     
 }
-

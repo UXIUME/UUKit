@@ -17,18 +17,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         title = "UUKit"
         
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44), backgroundColor: .green)
+        let btn = UIButton(frame: CGRect(x: 100, y: 200, width: 200, height: 200), backgroundColor: .green)
         btn.addTarget(self, action: #selector(clicked), for: .touchUpInside)
-        //view.addSubviews(btn)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
-        
+        view.addSubviews(btn)
         print(Date().weekday)
         print(str.isSome)
+        
+        btn.setBorder(30, UIColor(hexInt: 0xff0ff0)).setRoundCorner(direction: .topLeft)
+        
+        let btn1 = UIButton(frame: CGRect(x: 100, y: 410, width: 200, height: 200), backgroundColor: .green)
+        btn1.addTarget(self, action: #selector(clicked), for: .touchUpInside)
+        view.addSubviews(btn1)
+        
     }
     
     @objc func clicked() {
         getContact { (name, phone) in
-            print("\(name)的电话号码是\(phone)")
+            //print("\(name)的电话号码是\(phone)")
         }
     }
 
