@@ -8,13 +8,15 @@
 
 import UIKit
 
-
-/// 字符串为 nil、" "、""、"\n" 返回true
-public func ISEmpty(_ string: String?) -> Bool {
-    guard let str = string else { return true }
-    return str.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "").count == 0
+extension String {
+    /// 字符串为 nil、" "、""、"\n" 返回true
+    public var isBlank: Bool {
+        return allSatisfy({ $0.isWhitespace })
+    }
 }
 
+
+// MARK: - Size
 extension String {
     
     public func size(with font: UIFont, drawingSize: CGSize, mode: NSLineBreakMode) -> CGSize {

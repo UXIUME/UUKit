@@ -39,3 +39,25 @@ open class UUSearchController: UISearchController,UISearchBarDelegate {
     
 
 }
+
+//protocol UUSearchControllerProtocol {
+//    
+//    var searchController: UUSearchController { get }
+//    
+//}
+
+
+extension UIViewController:UISearchResultsUpdating {
+    
+    var searchController: UUSearchController {
+        return UUSearchController(searchResultsController: self, searchBarFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44), searchBarFont: UIFont.systemFont(ofSize: 14, weight: .regular), searchBarTextColor: .black, searchBarTintColor: .lightGray)
+    }
+    
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    
+    
+}

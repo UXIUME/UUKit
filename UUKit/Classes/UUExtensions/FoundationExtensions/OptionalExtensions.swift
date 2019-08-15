@@ -7,13 +7,12 @@
 
 import Foundation
 
-//extension Optional {
-//    
-//    var `default`<T where T :Self>: T {
-//        
-//    }
-//    
-//}
+extension Optional where Wrapped == String {
+    /// 配合String的isBlank共同使用，判断字符串是否为空
+    var isBlank: Bool {
+        return self?.isBlank ?? true
+    }
+}
 
 extension Optional where Wrapped: Collection {
     

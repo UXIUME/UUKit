@@ -1,51 +1,103 @@
+////
+////  UIViewControllerProtocol.swift
+////  Pods
+////
+////  Created by uxiu.me on 2019/1/16.
+////
 //
-//  UIViewControllerProtocol.swift
-//  Pods
+//import UIKit
 //
-//  Created by uxiu.me on 2019/1/16.
+//protocol UIViewControllerProtocol {
+//    
+//    var navigationBarButtonItemLeft:  UIButton? { get }
+//    var navigationBarRightItem: UIBarButtonItem? { get }
+//    
+//}
 //
-
-import UIKit
-
-public protocol UUViewControllerProtocol: NSObjectProtocol {
-    
-    
-    
-}
-
-protocol UISearchBarProtocol {
-    
-}
-
-protocol UIViewControllerProtocol: NSObjectProtocol {
-    
-//    var isStatusBarHidden: Bool {get set}
-//    var statusBarStyle: UIStatusBarStyle {get set}
+//protocol UITableViewControllerProtocol {
 //    
-//    var isNavigationBarHidden: Bool {get set}
+//}
+//
+//protocol UISearchViewControllerProtocol {
 //    
-//    var navigationLeftItem: UIView? {get set}
-//    var navigationRightItem: UIView? {get set}
+//}
+//
+//protocol UICollectionViewControllerProtocol {
 //    
-//    func setStatusBarStyle(_ style: UIStatusBarStyle)
-    
-}
-
-extension UIViewControllerProtocol where Self: UIViewController {
-    
-//    var isStatusBarHidden: Bool {
+//}
+//
+//extension UIViewControllerProtocol where Self: UIViewController {
+//    
+//    var navigationBarButtonItemLeft: UIView? {
 //        get {
-//            return self.prefersStatusBarHidden
+//            return navigationController?.navigationItem.leftBarButtonItem?.customView
+//        }
+//    }
+//    
+//    var navigationBarRightItem: UIBarButtonItem? {
+//        get {
+//            return navigationController?.navigationItem.rightBarButtonItem
 //        }
 //        set {
-//            isStatusBarHidden = newValue
-//            self.setNeedsStatusBarAppearanceUpdate()
+//            navigationController?.navigationItem.rightBarButtonItem = newValue
 //        }
 //    }
 //    
-//    var prefersStatusBarHidden: Bool {
-//        return isStatusBarHidden
+//}
+//
+//typealias ViewControllerProtocol = UIViewControllerProtocol & UITableViewControllerProtocol & UISearchViewControllerProtocol & UICollectionViewControllerProtocol
+//
+//
+//struct UIViewControllerConfiguration {
+//    
+//    var navigationBarLeftItem: UIBarButtonItem?
+//    var navigationBarRightItem: UIBarButtonItem?
+//    var isStatusBarHidden = false
+//    var statusBarStyle: UIStatusBarStyle = .default
+//    var isNavigationBarHidden: Bool
+//    
+//}
+//
+//extension UIViewController {
+//    
+//    class Base {
+//        
+//        
 //    }
-    
-}
-
+//    
+//    class Search {
+//        
+//    }
+//    
+//    class TableView {
+//        
+//        
+//    }
+//    
+//    class CollectionView {
+//        
+//    }
+//    
+//}
+//
+//extension UIViewController {
+//    
+//    private struct AssociatedKeys {
+//        static var DescriptiveName = "nsh_DescriptiveName"
+//        static var name = UnsafeRawPointer(bitPattern: Int(bitPattern: "name"))
+//    }
+//    
+//    var descriptiveName: String? {
+//        get {
+//            let key = UnsafeRawPointer(&AssociatedKeys.DescriptiveName)
+//            return objc_getAssociatedObject(self, &AssociatedKeys.DescriptiveName) as? String
+//        }
+//        set {
+//            if let newValue = newValue {
+//                objc_setAssociatedObject(self, &AssociatedKeys.DescriptiveName, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+//            }
+//        }
+//    }
+//}
+//
+//

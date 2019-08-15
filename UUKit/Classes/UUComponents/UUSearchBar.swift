@@ -34,8 +34,6 @@ open class UUSearchBar: UISearchBar {
         return index
     }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override open func draw(_ rect: CGRect) {
         if let searchField = subviews[0].subviews[indexOfSearchFieldInSubviews()] as? UITextField {
             searchField.font = preferredFont

@@ -7,10 +7,10 @@
 
 import UIKit
 
-public protocol UUSearchProtocol {
-    
-    var searchController: UUSearchController? {get set}
-    
-    
-    
-}
+//public protocol UUSearchProtocol {
+//    
+//    var searchController: UUSearchController? {get set}
+//    
+//    
+//    
+//}
