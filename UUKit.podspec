@@ -9,17 +9,15 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/UUKit/UUKit"
   
   spec.license               = { :type => "MIT", :file => "LICENSE" }
-  spec.author                = { "UUKit" => "mail@uxiu.me" }
+  spec.author                = { "UUKit" => "uukit@uxiu.me , mail@uxiu.me" }
+  spec.source                = { :git => 'https://github.com/UUKit/UUKit.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = "10.0"
 
-  
-  # spec.source       = { :git => "https://github.com/UUKit/UUKit.git", :commit => "43b160290428cd092526fdff22587e7cd10028ff" }
-  spec.source         = { :git => 'https://github.com/UUKit/UUKit.git', :tag => spec.version.to_s }
 
-  # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  # spec.exclude_files = "Classes/Exclude"
 
-  spec.source_files = 'UUKit/Classes/**/*.swift'
+  spec.source_files          = 'UUKit/Classes/**/*'
+
+
   # spec.swift_version = '5.0'
   # spec.public_header_files = "Classes/**/*.h"
   
