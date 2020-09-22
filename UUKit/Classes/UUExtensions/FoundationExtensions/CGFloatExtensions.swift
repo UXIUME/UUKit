@@ -28,10 +28,10 @@ extension CGFloat {
         return self * UIScreen.main.bounds.size.height / CGFloat(UITemplateSize.height)
     }
     
-    ///返回包括0和1.0之间的随机浮点数
-    static var random0_1: CGFloat {
-        return CGFloat(CGFloat(arc4random()) / 0xFFFFFFFF)
-    }
+//    ///返回包括0和1.0之间的随机浮点数
+//    static var random0_1: CGFloat {
+//        return CGFloat(CGFloat(arc4random()) / 0xFFFFFFFF)
+//    }
     
 }
 
@@ -48,10 +48,10 @@ extension Float {
         return self * Float(UIScreen.main.bounds.size.height) / Float(UITemplateSize.height)
     }
     
-    ///返回包括0和1.0之间的随机浮点数
-    public static var random0_1: Float {
-        return Float(CGFloat(arc4random()) / 0xFFFFFFFF)
-    }
+//    ///返回包括0和1.0之间的随机浮点数
+//    public static var random0_1: Float {
+//        return Float(CGFloat(arc4random()) / 0xFFFFFFFF)
+//    }
     
 }
 

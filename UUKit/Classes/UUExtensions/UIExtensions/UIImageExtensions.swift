@@ -9,7 +9,7 @@
 import UIKit
 import Accelerate
 
-@objc extension UIImage {
+@objc public extension UIImage {
     
     
     /// <#Description#>
@@ -18,7 +18,7 @@ import Accelerate
     ///   - imgName: <#imgName description#>
     ///   - bundleName: <#bundleName description#>
     /// - Returns: <#return value description#>
-    public static func `init`(_ imgName: String, inBundle bundleName: String) -> UIImage? {
+    static func `init`(_ imgName: String, inBundle bundleName: String) -> UIImage? {
 //        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:bundleName ofType:@"bundle"];
 //        NSString *imgPath= [bundlePath stringByAppendingPathComponent:imgName];
 //        UIImage *image=[UIImage imageWithContentsOfFile:imgPath];
@@ -47,9 +47,10 @@ import Accelerate
     /// 根据颜色创建一张纯色的图片
     ///
     /// - Parameter color: 颜色值
+    /// - Parameter size: 图片大小
     /// - Returns: 返回一个UIImage实例
-    public static func `init`(color: UIColor) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+    static func `init`(with color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(color.cgColor)
@@ -59,7 +60,7 @@ import Accelerate
         return image!
     }
     
-    public func blur(level: CGFloat) -> UIImage {
+    func blur(level: CGFloat) -> UIImage {
         // 处理模糊程度, 防止超出
         var levelValue: CGFloat = level
         if level < 0 {
