@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/4/4.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import UIKit
@@ -114,9 +114,10 @@ extension UIView {
     
 }
 
-extension UIView {
+
+public extension UIView {
     
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -127,7 +128,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -136,12 +137,22 @@ extension UIView {
         }
     }
     
-    @IBInspectable public var borderColor: UIColor {
+    @IBInspectable var borderColor: UIColor {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
         set {
             layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    @IBInspectable var zPosition: CGFloat {
+        get {
+            return layer.zPosition
+        }
+        
+        set {
+            layer.zPosition = newValue
         }
     }
     

@@ -1,5 +1,6 @@
-use_frameworks!
+platform :ios, '10.0'
 
+use_frameworks!
 target 'UUKit_Example' do
   pod 'UUKit', :path => '../'
 

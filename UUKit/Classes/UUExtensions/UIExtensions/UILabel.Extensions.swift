@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/5/16.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import UIKit
@@ -36,6 +36,21 @@ extension UILabel {
         label.textColor = .black
         label.font = .systemFont(ofSize: 14)
         return label
+    }
+    
+}
+
+
+public extension UILabel {
+    
+    func setLinespace(_ linespace: CGFloat) {
+        let _text = text ?? ""
+        let attributedString = NSMutableAttributedString(string: _text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = linespace
+        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: _text.count))
+        attributedText = attributedString
+        sizeToFit()
     }
     
 }

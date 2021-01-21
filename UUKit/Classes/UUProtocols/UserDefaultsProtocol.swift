@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/4/17.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import Foundation

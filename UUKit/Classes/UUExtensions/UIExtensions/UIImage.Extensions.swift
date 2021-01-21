@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/4/23.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import UIKit
@@ -123,5 +123,27 @@ import Accelerate
         
         return finalImage
     }
+    
+}
+
+public extension UIImage {
+    
+    /// 压缩图片质量(Quality)，图片尺寸不变，文件大小变
+    /// - Parameters:
+    ///   - fileSize: 文件大小，单位 “字节(byte 8个比特)”。 e.g.：150 * 1024 --> 150KB
+    ///   - eachRatio: while循环压缩率 0.0 ~ 1.0
+    /// - Returns: 压缩成功返回 image 的 Data 文件，压缩失败返回 nil
+    func compressed(lessThan fileSize: Int, eachRatio: CGFloat = 0.9) -> Data? {
+        var ratio = eachRatio
+        guard var compressedImg = jpegData(compressionQuality: ratio) else { return nil }
+        while compressedImg.count > fileSize {
+            ratio = ratio * eachRatio
+            guard let _compressedImg = jpegData(compressionQuality: ratio) else { return nil }
+            compressedImg = _compressedImg
+        }
+        print("压缩后的图片大小：\(compressedImg.count / 1024) kb")
+        return compressedImg
+    }
+    
     
 }

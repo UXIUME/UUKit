@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/8/5.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import UIKit
@@ -56,3 +56,16 @@ extension UIViewController: CNContactPickerDelegate {
     }
     
 }
+
+
+// MARK: - 文件预览
+extension UIViewController {
+    
+    
+    
+    
+    
+    
+}
+
+

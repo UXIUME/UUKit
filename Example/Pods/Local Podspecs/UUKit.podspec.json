@@ -1,6 +1,9 @@
 {
   "name": "UUKit",
   "version": "0.0.3",
+  "platforms": {
+    "ios": "10.0"
+  },
   "summary": "iOS开发基础组件",
   "description": "iOS开发基础组件，包括一些有用的扩展，等工具.",
   "homepage": "https://github.com/UUKit/UUKit",
@@ -9,15 +12,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "UUKit": "mail@uxiu.me"
-  },
-  "platforms": {
-    "ios": "9.0"
+    "UUKit": "uukit@uxiu.me , mail@uxiu.me"
   },
   "source": {
     "git": "https://github.com/UUKit/UUKit.git",
     "tag": "0.0.3"
   },
-  "source_files": "UUKit/Classes/**/*",
-  "swift_version": "4.2"
+  "source_files": "UUKit/Classes/**/*"
 }

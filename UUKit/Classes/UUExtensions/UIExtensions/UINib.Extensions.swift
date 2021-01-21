@@ -3,7 +3,7 @@
 //  Dynasty.dajiujiao
 //
 //  Created by uxiu.me on 2018/4/16.
-//  Copyright © 2018年 HangZhouFaDaiGuoJiMaoYi Co. Ltd. All rights reserved.
+//  Copyright © 2018年 uxiu.me Co. Ltd. All rights reserved.
 //
 
 import UIKit
@@ -21,5 +21,12 @@ import UIKit
         }
         return true
     }
+    
+//    convenience init(_ anyClass: AnyClass) {
+//        let className = type(of: anyClass)
+//        let bundle = Bundle(for: className)
+//        let name = NSStringFromClass(className).components(separatedBy: ".").last
+//        UINib(nibName: name!, bundle: bundle)
+//    }
         
 }
