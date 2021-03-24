@@ -234,6 +234,13 @@ public extension String {
         }
     }
     
+    /// 去掉一段文字中的HTML标签，只保留文字
+    var trimHTMLTags: String {
+        let regularExpretion = try? NSRegularExpression(pattern: "<[^>]*>|\n|&nbsp", options: NSRegularExpression.Options(rawValue: 0))
+        let string = regularExpretion?.stringByReplacingMatches(in: self, options: .reportProgress, range: NSRange(location: 0, length: self.count), withTemplate: "")
+        return string ?? self;
+    }
+    
 }
 
 

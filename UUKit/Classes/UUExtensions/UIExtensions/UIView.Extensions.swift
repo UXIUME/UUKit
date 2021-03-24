@@ -137,12 +137,13 @@ public extension UIView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor {
+    @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(cgColor: layer.borderColor!)
+            guard let _cgColor = layer.borderColor else { return nil }
+            return UIColor(cgColor: _cgColor)
         }
         set {
-            layer.borderColor = newValue.cgColor
+            layer.borderColor = newValue?.cgColor
         }
     }
     
@@ -154,6 +155,22 @@ public extension UIView {
         set {
             layer.zPosition = newValue
         }
+    }
+    
+}
+
+
+extension UIView {
+    
+    /// 一个 view 的父视图，以及父视图的父视图，递归获取数组
+    public var superviews: [UIView] {
+        var arrm = [UIView]()
+        var view = self
+        while view.superview != nil {
+            arrm.append(view.superview!)
+            view = view.superview!
+        }
+        return arrm
     }
     
 }

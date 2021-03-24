@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "UUKit"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.platform     = :ios, "10.0"
   spec.summary      = "iOS开发基础组件"
   spec.description  = "iOS开发基础组件，包括一些有用的扩展，等工具."

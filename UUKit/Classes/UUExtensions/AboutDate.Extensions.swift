@@ -11,6 +11,46 @@ public protocol UUTimeIntervalProtocol {
     var timeInterval: TimeInterval { get }
 }
 
+enum UUTimeUnit {
+    case seconds
+    case minutes
+    
+//    func ago() -> Date {
+//        <#function body#>
+//    }
+    
+//    - (BOOL)isLeapYear {
+//        NSUInteger year = self.year;
+//        return ((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0)));
+//    }
+//
+//    - (BOOL)isToday {
+//        if (fabs(self.timeIntervalSinceNow) >= 60 * 60 * 24) return NO;
+//        return [NSDate new].day == self.day;
+//    }
+//
+//    - (BOOL)isYesterday {
+//        NSDate *added = [self dateByAddingDays:1];
+//        return [added isToday];
+//    }
+//
+//    - (NSDate *)dateByAddingYears:(NSInteger)years {
+//        NSCalendar *calendar =  [NSCalendar currentCalendar];
+//        NSDateComponents *components = [[NSDateComponents alloc] init];
+//        [components setYear:years];
+//        return [calendar dateByAddingComponents:components toDate:self options:0];
+//    }
+//
+//    - (NSDate *)dateByAddingMonths:(NSInteger)months {
+//        NSCalendar *calendar = [NSCalendar currentCalendar];
+//        NSDateComponents *components = [[NSDateComponents alloc] init];
+//        [components setMonth:months];
+//        return [calendar dateByAddingComponents:components toDate:self options:0];
+//    }
+//
+
+}
+
 extension UUTimeIntervalProtocol {
     public var seconds: TimeInterval { return timeInterval * 1 }
     public var minutes: TimeInterval { return timeInterval * 60 /* 一分钟秒数 */ }
@@ -18,9 +58,21 @@ extension UUTimeIntervalProtocol {
     public var days: TimeInterval { return timeInterval * (24 * 60 * 60) /* 一天的秒数 */ }
     public var weeks: TimeInterval { return timeInterval * (7 * 24 * 60 * 60) /* 一星期秒数 */ }
     
-    //var months: TimeInterval {  }
+    var months: TimeInterval {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.month = Int(timeInterval)
+        let date = calendar.date(byAdding: components, to: Date())
+        return date?.timeIntervalSinceNow ?? 0
+    }
     
-    //var years: TimeInterval {  }
+    var years: TimeInterval {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.year = Int(timeInterval)
+        let date = calendar.date(byAdding: components, to: Date())
+        return date?.timeIntervalSinceNow ?? 0
+    }
 }
 
 extension TimeInterval {

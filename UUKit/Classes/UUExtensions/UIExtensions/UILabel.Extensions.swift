@@ -54,3 +54,48 @@ public extension UILabel {
     }
     
 }
+
+
+extension UILabel {
+    
+    public enum RequiedMarkPosition {
+        case leading,trailing
+    }
+    
+    /// 给表单中必须的项 label 添加必须标记
+    public func addRequiedMark(_ requiredMark: String = "*", _ requiedMarkPosition: RequiedMarkPosition = .trailing) {
+        let attrStrm = NSMutableAttributedString(string: "")
+        let attrText = NSAttributedString(string: text ?? "")
+        let requiedMarkAttrStr = NSAttributedString(string: requiredMark, attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        
+        switch requiedMarkPosition {
+        case .leading:
+            if let attributedText = attributedText {
+                let first = attributedText.string.first
+                guard first != Character(requiredMark) else { return }
+                attrStrm.append(requiedMarkAttrStr)
+                attrStrm.append(attributedText)
+            } else {
+                let first = attrText.string.first
+                guard first != Character(requiredMark) else { return }
+                attrStrm.append(requiedMarkAttrStr)
+                attrStrm.append(attrText)
+            }
+        case .trailing:
+            if let attributedText = attributedText {
+                let last = attributedText.string.last
+                guard last != Character(requiredMark) else { return }
+                attrStrm.append(attributedText)
+                attrStrm.append(requiedMarkAttrStr)
+            } else {
+                let last = attrText.string.last
+                guard last != Character(requiredMark) else { return }
+                attrStrm.append(attrText)
+                attrStrm.append(requiedMarkAttrStr)
+            }
+        }
+        attributedText = attrStrm
+    }
+    
+    
+}
